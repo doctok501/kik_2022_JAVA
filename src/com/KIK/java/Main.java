@@ -7,17 +7,17 @@ public class Main {
 		
 		
 		ArrayList articles = new ArrayList();
-		articles.add(new Article());
-		articles.add(new Article());
-		articles.add(new Article());
-		articles.add(new Article());
-		articles.add(new Article());
+		articles.add(new Article1());
+		articles.add(new Article1());
+		articles.add(new Article1());
+		articles.add(new Article1());
+		articles.add(new Article1());
 		
 		
 	}
 }
 
-class Article {
+class Article1 {
 	static int LastId;
 	int id;
 	String regDate;
@@ -26,12 +26,16 @@ class Article {
 		LastId = 0;
 	}
 
-	Article() {
+	Article1() {
 		this(LastId + 1 , "2022-12-12 12:12:12");
 		LastId++;
 	}
 
-	Article(int id, String regDate) {
+	public Article1(int i, String string) {
+	
+	}
+
+	void Article(int id, String regDate) {
 		this.id = id;
 		this.regDate = regDate;
 	}
