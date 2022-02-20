@@ -1,25 +1,25 @@
-package com.KIK.java;
+package com.KIK.java2;
 
-import java.nio.file.spi.FileSystemProvider;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main02 {
+import com.KIK.java.Util;
+import com.KIK.java2.dto.Article;
+
+public class App {
 	private static List<Article> articles;
 
 	static {
 		articles = new ArrayList<>();
 	}
 
-	public static void main(String[] args) {
+	public void start() {
 		System.out.println("==프로그램 시작==");
 
 		makeTestData();
-		
-		Scanner sc = new Scanner(System.in);
 
-		
+		Scanner sc = new Scanner(System.in);
 
 		while (true) {
 			System.out.printf("명령어) ");
@@ -112,37 +112,11 @@ public class Main02 {
 
 	private static void makeTestData() {
 		System.out.println("테스트를 위한 데이터를 생성합니다.");
-		
+
 		articles.add(new Article(1, Util.getNowDateTimeStr(), "제목 1", "내용 1"));
 		articles.add(new Article(2, Util.getNowDateTimeStr(), "제목 2", "내용 2"));
 		articles.add(new Article(3, Util.getNowDateTimeStr(), "제목 3", "내용 3"));
 
-	
-	}
-}
-
-class Article {
-
-	int id;
-	String title;
-	String body;
-	String regDate;
-	int hit;
-
-	public Article(int id, String regDate, String title, String body) {
-		this(id, regDate, title, body, 0);
-	}
-	
-	public Article(int id, String regDate, String title, String body, int hit) {
-	this.id = id;
-		this.title = title;
-		this.body = body;
-		this.hit = hit;
-		this.regDate = regDate;
-	}
-
-	public void increaseHit() {
-		hit++;
 	}
 
 }
